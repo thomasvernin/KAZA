@@ -1,0 +1,24 @@
+:root {
+    --header-logo-width-min: 8rem;
+    --header-logo-width-max: 13rem;
+    --header-logo-width-viewport: 25vw;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    &__logo {
+        
+        width: clamp(
+            var(--header-logo-width-min),
+            var(--header-logo-width-viewport),
+            var(--header-logo-width-max)
+        );
+    }
+}
+  
+  

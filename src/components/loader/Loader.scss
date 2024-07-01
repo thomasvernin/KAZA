@@ -1,0 +1,52 @@
+@import "../../_vars.scss";
+
+
+:root {
+    --loader-size: 40px;
+    --loader-margin: 100px auto;
+    --loader-animation-duration: 2s;
+    --loader-animation-delay: -1s;
+    --loader-color: #{$color-primary};
+    --loader-opacity: 0.6;
+}
+
+
+.loader {
+    width: var(--loader-size);
+    height: var(--loader-size);
+    position: relative;
+    margin: var(--loader-margin);
+}
+
+
+.double-bounce1,
+.double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--loader-color);
+    opacity: var(--loader-opacity);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    
+    animation: sk-bounce var(--loader-animation-duration) infinite ease-in-out;
+}
+
+
+.double-bounce2 {
+    animation-delay: var(--loader-animation-delay);
+}
+
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
